@@ -1,0 +1,9 @@
+@import '~@angular/material/_theming.scss';
+
+@include mat-core();
+
+table{
+  width: 100%;
+}
+.test{
+}

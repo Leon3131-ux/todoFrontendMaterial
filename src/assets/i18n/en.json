@@ -1,0 +1,96 @@
+{
+  "general": {
+    "task": "Task",
+    "true": "true",
+    "false": "false",
+    "actions": "Actions",
+    "delete": "Delete",
+    "restore": "Restore",
+    "messages": {
+      "error": "An error occurred!",
+      "success": "Operation successful!"
+    }
+  },
+  "errors": {
+    "task": {
+      "title": {
+        "required": "Title is required",
+        "alreadyUsed": "Title is already in use",
+        "inDeleted": "Title is already in use in deleted tasks"
+      },
+      "description": {
+        "required": "Description is required"
+      },
+      "date": {
+        "invalid": "Invalid Date",
+        "bsDate": "Invalid Date",
+        "required": "Date is required"
+      }
+    },
+    "general": {
+      "badRequest": "An error has occurred",
+      "notFound": "The requested resource could not be found",
+      "internalError": "An internal error has occurred"
+    },
+    "login": {
+      "credentials": {
+        "wrong": "Wrong password or username"
+      }
+    },
+    "authentication": {
+      "unauthorized": "Unauthorized action"
+    }
+  },
+  "fields": {
+    "general": {
+      "title": "Title",
+      "description": "Description",
+      "date": "Date",
+      "done": "Done",
+      "actions": "Actions"
+    },
+    "errors": {
+      "required": "is required",
+      "invalid": "is invalid",
+      "alreadyUsed": "is already used",
+      "bsDate": "is invalid"
+    }
+  },
+  "dropdown": {
+    "selection": {
+      "tasks": {
+        "all": "All tasks",
+        "finished": "Finished Tasks",
+        "unfinished": "Unfinished Tasks",
+        "deleted": "Deleted Tasks"
+      },
+      "language": {
+        "de": "Deutsch",
+        "en": "English"
+      }
+    },
+    "title": {
+      "tasks": {
+        "type": "Select Task type"
+      },
+      "language": "Language"
+    }
+  },
+  "buttons": {
+    "submit": "Submit",
+    "edit": "Edit",
+    "delete": "Delete",
+    "reset": "Reset",
+    "new": "New",
+    "details": "Details",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "modal": {
+    "title": {
+      "tasks": {
+        "save": "Create or edit a Task"
+      }
+    }
+  }
+}

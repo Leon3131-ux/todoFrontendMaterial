@@ -1,0 +1,40 @@
+<ng-template #saveTaskDialog>
+  <h1 mat-dialog-title>{{'modal.title.tasks.save' | translate}}</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="taskForm">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'fields.general.title' | translate}}</mat-label>
+          <input matInput formControlName="title">
+          <mat-error>{{errors.get('title') | translate}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'fields.general.description' | translate}}</mat-label>
+          <input matInput formControlName="description">
+          <mat-error>{{errors.get('description') | translate}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-checkbox formControlName="done" color="primary">
+          {{'fields.general.done' | translate}}
+        </mat-checkbox>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>{{'fields.general.date' | translate}}</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date"/>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>{{errors.get('date') | translate}}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="saveTask()">{{'buttons.submit' | translate}}</button>
+    <button mat-raised-button color="warn" *ngIf="task.id" (click)="deleteTask()">{{'buttons.delete' | translate}}</button>
+    <button mat-raised-button color="accent" *ngIf="task.id && task.deleted" (click)="restoreTask()">{{'general.restore' | translate}}</button>
+  </div>
+</ng-template>

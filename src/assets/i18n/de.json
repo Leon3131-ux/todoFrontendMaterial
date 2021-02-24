@@ -1,0 +1,96 @@
+{
+  "general": {
+    "task": "Aufgabe",
+    "true": "Ja",
+    "false": "Nein",
+    "actions": "Aktionen",
+    "delete": "Löschen",
+    "restore": "wiederherstellen",
+    "messages": {
+      "error": "Ein Fehler ist aufgetreten!",
+      "success": "Aktion war erfolgreich!"
+    }
+  },
+  "errors": {
+    "task": {
+      "title": {
+        "required": "Titel wird benötigt",
+        "alreadyUsed": "Titel wird schon benutzt",
+        "inDeleted": "Titel wird schon in gelöschter Aufgabe verwendet"
+      },
+      "description": {
+        "required": "Beschreibung wird benötigt"
+      },
+      "date": {
+        "invalid": "Ungüliges Datum",
+        "bsDate": "Ungüliges Datum",
+        "required": "Datum wird benötigt "
+      }
+    },
+    "general": {
+      "badRequest": "Es ist ein Fehler aufgetreten",
+      "notFound": "Die Angefragte Resource konnte nicht gefunden werden",
+      "internalError": "Ein interner Fehler ist aufgetreten"
+    },
+    "login": {
+      "credentials": {
+        "wrong": "Falsches Passwort oder Benutzername"
+      }
+    },
+    "authentication": {
+      "unauthorized": "Unbefugte Aktion"
+    }
+  },
+  "fields": {
+    "general": {
+      "title": "Titel",
+      "description": "Beschreibung",
+      "date": "Datum",
+      "done": "Erledigt",
+      "actions": "Aktionen"
+    },
+    "errors": {
+      "required": "wird benötigt",
+      "invalid": "ist ungültig",
+      "alreadyUsed": "wird schon benutzt",
+      "bsDate": "ist ungültig"
+    }
+  },
+  "dropdown": {
+    "selection": {
+      "tasks": {
+        "all": "Alle Aufgaben",
+        "finished": "Erledigte Aufgaben",
+        "unfinished": "Zu erledigende Aufgaben",
+        "deleted": "Gelöschte Aufgaben"
+      },
+      "language": {
+        "de": "Deutsch",
+        "en": "English"
+      }
+    },
+    "title": {
+      "tasks": {
+        "type": "Aufgabentyp auswählen"
+      },
+      "language": "Sprache"
+    }
+  },
+  "buttons": {
+    "submit": "Abschicken",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "reset": "Zurücksetzten",
+    "new": "Neu",
+    "details": "Info",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "modal": {
+    "title": {
+      "tasks": {
+        "save": "Aufgabe bearbeiten oder erstellen"
+      }
+    }
+  }
+}

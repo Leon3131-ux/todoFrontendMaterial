@@ -1,0 +1,14 @@
+.sticky-bottom{
+  position: absolute;
+  bottom: 0;
+  padding: inherit;
+  left: 0;
+  right: 0;
+}
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+.container{
+  padding: 20px;
+}
