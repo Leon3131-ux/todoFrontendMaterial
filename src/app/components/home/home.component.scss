@@ -1,9 +1,11 @@
-.sticky-bottom{
+@import '~@angular/material/theming';
+
+.sticky-bottom-wrapper{
   position: absolute;
-  bottom: 0;
-  padding: inherit;
   left: 0;
-  right: 0;
+  bottom: 0;
+  padding: 0;
+  width: 100%;
 }
 .flex-between{
   display: flex;
@@ -11,4 +13,8 @@
 }
 .container{
   padding: 20px;
+}
+.bottom-bar{
+  background-color: mat-color($mat-dark-theme-foreground, dividers);
+  padding: 10px;
 }

@@ -1,8 +1,12 @@
 table{
   width: 100%;
 }
-.test{
-}
 mat-card{
   margin-top: 20px;
+}
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+p{
+  word-break: break-all;
 }

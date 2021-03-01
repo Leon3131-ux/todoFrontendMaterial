@@ -12,13 +12,13 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>{{'fields.general.description' | translate}}</mat-label>
-          <input matInput formControlName="description">
+          <textarea matInput formControlName="description"></textarea>
           <mat-error>{{errors.get('description') | translate}}</mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-checkbox formControlName="done" color="primary">
-          {{'fields.general.done' | translate}}
+          {{'fields.general.done.field' | translate}}
         </mat-checkbox>
       </div>
       <div>

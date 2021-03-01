@@ -27,8 +27,10 @@
   </div>
   <app-task-table [tasks]="displayTasks" (taskSelect)="onTaskSelect($event)"></app-task-table>
   <app-task-save [task]="currentTask" (savedTask)="onSavedTask($event)" (deletedTask)="onDeleteTask($event)" (hideDialog)="onDialogHide()"></app-task-save>
-  <div class="sticky-bottom flex-between">
-    <button mat-raised-button color="primary" (click)="saveNewTask()">{{'buttons.new' | translate}}</button>
-    <button mat-raised-button color="primary" (click)="logout()">{{'buttons.logout' | translate}}</button>
+  <div class="sticky-bottom-wrapper">
+    <div class="flex-between bottom-bar">
+      <button mat-raised-button color="primary" (click)="saveNewTask()">{{'buttons.new' | translate}}</button>
+      <button mat-raised-button color="primary" (click)="logout()">{{'buttons.logout' | translate}}</button>
+    </div>
   </div>
 </div>

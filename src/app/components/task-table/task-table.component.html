@@ -10,8 +10,8 @@
   </ng-container>
 
   <ng-container matColumnDef="done">
-    <th mat-header-cell *matHeaderCellDef>{{'fields.general.done' | translate}}</th>
-    <td mat-cell *matCellDef="let task"> {{task.done}} </td>
+    <th mat-header-cell *matHeaderCellDef>{{'fields.general.status' | translate}}</th>
+    <td mat-cell *matCellDef="let task"> {{'fields.general.done.' + task.done | translate}} </td>
   </ng-container>
 
   <ng-container matColumnDef="date">
@@ -20,7 +20,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let task; columns: displayedColumns;" (click)="selectTask(task)" [ngClass]="{'test': task.date < today && task.done === false}"></tr>
+  <tr mat-row *matRowDef="let task; columns: displayedColumns;" (click)="selectTask(task)"></tr>
 </table>
 
 <div *ngIf="innerWidth <= 576">
@@ -34,6 +34,9 @@
       </p>
       <p>
         {{task.date | date: 'dd/MM/YYYY'}}
+      </p>
+      <p>
+        {{'fields.general.status' | translate}}: {{'fields.general.done.' + task.done | translate}}
       </p>
     </mat-card-content>
     <mat-card-actions>

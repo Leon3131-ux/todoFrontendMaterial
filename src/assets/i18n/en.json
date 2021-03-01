@@ -46,7 +46,12 @@
       "title": "Title",
       "description": "Description",
       "date": "Date",
-      "done": "Done",
+      "status": "Status",
+      "done": {
+        "field": "Done",
+        "true": "Done",
+        "false": "Unfinished"
+      },
       "actions": "Actions"
     },
     "errors": {

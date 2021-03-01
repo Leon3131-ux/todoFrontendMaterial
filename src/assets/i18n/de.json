@@ -46,7 +46,12 @@
       "title": "Titel",
       "description": "Beschreibung",
       "date": "Datum",
-      "done": "Erledigt",
+      "status": "Status",
+      "done": {
+        "field": "Erledigt",
+        "true": "Erledigt",
+        "false": "Nicht Erledigt"
+      },
       "actions": "Aktionen"
     },
     "errors": {
