@@ -5,14 +5,16 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>{{'fields.general.title' | translate}}</mat-label>
-          <input matInput formControlName="title">
+          <input matInput maxlength="60" formControlName="title">
+          <mat-hint align="end">{{taskForm.get('title').value.length}} / 60</mat-hint>
           <mat-error>{{errors.get('title') | translate}}</mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="fill">
           <mat-label>{{'fields.general.description' | translate}}</mat-label>
-          <textarea matInput formControlName="description"></textarea>
+          <textarea matInput maxlength="250" formControlName="description"></textarea>
+          <mat-hint align="end">{{taskForm.get('description').value.length}} / 250</mat-hint>
           <mat-error>{{errors.get('description') | translate}}</mat-error>
         </mat-form-field>
       </div>

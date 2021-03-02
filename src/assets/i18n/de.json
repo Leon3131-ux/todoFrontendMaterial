@@ -5,7 +5,7 @@
     "false": "Nein",
     "actions": "Aktionen",
     "delete": "Löschen",
-    "restore": "wiederherstellen",
+    "restore": "Wiederherstellen",
     "messages": {
       "error": "Ein Fehler ist aufgetreten!",
       "success": "Aktion war erfolgreich!"

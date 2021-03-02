@@ -9,7 +9,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {MatNativeDateModule} from '@angular/material/core';
+import {MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
 
 
 
@@ -32,6 +32,9 @@ import {MatNativeDateModule} from '@angular/material/core';
       MatButtonModule,
       MatNativeDateModule,
       ReactiveFormsModule
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}
   ]
 })
 export class TaskSaveModule { }

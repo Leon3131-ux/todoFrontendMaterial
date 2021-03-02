@@ -1,20 +1,19 @@
-import {Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {Task} from '../../classes/task';
 import {MatTable} from '@angular/material/table';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-task-table',
   templateUrl: './task-table.component.html',
   styleUrls: ['./task-table.component.scss']
 })
-export class TaskTableComponent implements OnInit{
+export class TaskTableComponent implements OnInit, OnChanges{
 
 
   constructor() { }
 
   @ViewChild(MatTable) table: MatTable<any>;
-  @Input()tasks: Observable<Task[]>;
+  @Input()tasks: Task[];
   @Output() taskSelect: EventEmitter<Task> = new EventEmitter<Task>();
   displayedColumns: string[] = ['title', 'description', 'done', 'date'];
   today: Date = new Date();
@@ -22,6 +21,12 @@ export class TaskTableComponent implements OnInit{
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
+    this.tasks = [];
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.tasks.currentValue && !changes.tasks.firstChange && this.innerWidth > 576){
+      this.table.renderRows();
+    }
   }
   @HostListener('window:resize', ['$event'])
   onResize() {

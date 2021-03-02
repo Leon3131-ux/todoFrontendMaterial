@@ -2,15 +2,11 @@
 
 @mixin app-task-table-theme($theme){
   $warn: map-get($theme, warn);
-  $success: mat-palette($mat-green);
 
 
   app-task-table{
     .expired{
       background-color: mat-color($warn) !important;
-    }
-    .success{
-      background-color: mat-color($success) !important;
     }
   }
 

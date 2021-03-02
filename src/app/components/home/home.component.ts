@@ -1,7 +1,6 @@
-import {Component, EventEmitter, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TaskService} from '../../services/task.service';
 import {Task} from '../../classes/task';
-import {Observable} from 'rxjs';
 import {TaskFilter} from '../../classes/task-filter.enum';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
@@ -20,7 +19,7 @@ export class HomeComponent implements OnInit {
               public translateService: TranslateService) { }
 
   tasks: Task[] = [];
-  displayTasks: EventEmitter<Task[]> = new EventEmitter<Task[]>();
+  displayTasks: Task[];
   currentTask: Task;
   taskFilter: TaskFilter = 0;
   currentLang: string = this.translateService.currentLang;
@@ -103,7 +102,7 @@ export class HomeComponent implements OnInit {
         tasksToDisplay = this.tasks.filter(task => !task.done && !task.deleted);
         break;
     }
-    this.displayTasks.emit(tasksToDisplay);
+    this.displayTasks = tasksToDisplay;
   }
 
 }
