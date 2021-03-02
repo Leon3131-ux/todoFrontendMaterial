@@ -1,36 +1,36 @@
 <div class="container">
-  <div class="flex-between">
-    <button mat-raised-button color="accent" [matMenuTriggerFor]="filterMenu">{{ 'dropdown.title.tasks.type' | translate }}</button>
-    <mat-menu #filterMenu="matMenu">
-      <div>
-        <button mat-button (click)="setTaskFilter(0)">{{ 'dropdown.selection.tasks.all' | translate }} <mat-icon *ngIf="taskFilter === 0" aria-label="checkmark">done</mat-icon></button>
-      </div>
-      <div>
-        <button mat-button (click)="setTaskFilter(1)">{{ 'dropdown.selection.tasks.finished' | translate }} <mat-icon *ngIf="taskFilter === 1" aria-label="checkmark">done</mat-icon></button>
-      </div>
-      <div>
-        <button mat-button (click)="setTaskFilter(2)">{{ 'dropdown.selection.tasks.unfinished' | translate }} <mat-icon *ngIf="taskFilter === 2" aria-label="checkmark">done</mat-icon></button>
-      </div>
-      <div>
-        <button mat-button (click)="setTaskFilter(3)">{{ 'dropdown.selection.tasks.deleted' | translate }} <mat-icon *ngIf="taskFilter === 3 " aria-label="checkmark">done</mat-icon></button>
-      </div>
-    </mat-menu>
-    <button mat-raised-button color="accent" [matMenuTriggerFor]="languageMenu">{{ 'dropdown.title.language' | translate }}</button>
-    <mat-menu #languageMenu="matMenu">
-      <div>
-        <button mat-button (click)="setLanguage('en')">{{ 'dropdown.selection.language.en' | translate }} <mat-icon *ngIf="currentLang === 'en'" aria-label="checkmark">done</mat-icon></button>
-      </div>
-      <div>
-        <button mat-button (click)="setLanguage('de')">{{ 'dropdown.selection.language.de' | translate }} <mat-icon *ngIf="currentLang === 'de'" aria-label="checkmark">done</mat-icon></button>
-      </div>
-    </mat-menu>
-  </div>
-  <app-task-table [tasks]="displayTasks" (taskSelect)="onTaskSelect($event)"></app-task-table>
-  <app-task-save [task]="currentTask" (savedTask)="onSavedTask($event)" (deletedTask)="onDeleteTask($event)" (hideDialog)="onDialogHide()"></app-task-save>
-  <div class="sticky-bottom-wrapper">
-    <div class="flex-between bottom-bar">
-      <button mat-raised-button color="primary" (click)="saveNewTask()">{{'buttons.new' | translate}}</button>
-      <button mat-raised-button color="primary" (click)="logout()">{{'buttons.logout' | translate}}</button>
+  <div class="content">
+    <div class="flex-between">
+      <button mat-raised-button color="accent" [matMenuTriggerFor]="filterMenu">{{ 'dropdown.title.tasks.type' | translate }}</button>
+      <mat-menu #filterMenu="matMenu">
+        <div>
+          <button mat-button (click)="setTaskFilter(0)">{{ 'dropdown.selection.tasks.all' | translate }} <mat-icon *ngIf="taskFilter === 0" aria-label="checkmark">done</mat-icon></button>
+        </div>
+        <div>
+          <button mat-button (click)="setTaskFilter(1)">{{ 'dropdown.selection.tasks.finished' | translate }} <mat-icon *ngIf="taskFilter === 1" aria-label="checkmark">done</mat-icon></button>
+        </div>
+        <div>
+          <button mat-button (click)="setTaskFilter(2)">{{ 'dropdown.selection.tasks.unfinished' | translate }} <mat-icon *ngIf="taskFilter === 2" aria-label="checkmark">done</mat-icon></button>
+        </div>
+        <div>
+          <button mat-button (click)="setTaskFilter(3)">{{ 'dropdown.selection.tasks.deleted' | translate }} <mat-icon *ngIf="taskFilter === 3 " aria-label="checkmark">done</mat-icon></button>
+        </div>
+      </mat-menu>
+      <button mat-raised-button color="accent" [matMenuTriggerFor]="languageMenu">{{ 'dropdown.title.language' | translate }}</button>
+      <mat-menu #languageMenu="matMenu">
+        <div>
+          <button mat-button (click)="setLanguage('en')">{{ 'dropdown.selection.language.en' | translate }} <mat-icon *ngIf="currentLang === 'en'" aria-label="checkmark">done</mat-icon></button>
+        </div>
+        <div>
+          <button mat-button (click)="setLanguage('de')">{{ 'dropdown.selection.language.de' | translate }} <mat-icon *ngIf="currentLang === 'de'" aria-label="checkmark">done</mat-icon></button>
+        </div>
+      </mat-menu>
     </div>
+    <app-task-table [tasks]="displayTasks" (taskSelect)="onTaskSelect($event)"></app-task-table>
+    <app-task-save [task]="currentTask" (savedTask)="onSavedTask($event)" (deletedTask)="onDeleteTask($event)" (hideDialog)="onDialogHide()"></app-task-save>
+  </div>
+  <div class="flex-between sticky-footer">
+    <button mat-raised-button color="primary" (click)="saveNewTask()">{{'buttons.new' | translate}}</button>
+    <button mat-raised-button color="primary" (click)="logout()">{{'buttons.logout' | translate}}</button>
   </div>
 </div>

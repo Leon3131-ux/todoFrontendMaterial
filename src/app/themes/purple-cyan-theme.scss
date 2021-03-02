@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$purple-cyan-primary: mat-palette($mat-purple);
+$purple-cyan-accent: mat-palette($mat-cyan);
+$purple-cyan-warn: mat-palette($mat-red);
+
+$purple-cyan-theme: mat-dark-theme($purple-cyan-primary, $purple-cyan-accent, $purple-cyan-warn);

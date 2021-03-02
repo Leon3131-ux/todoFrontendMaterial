@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/purple-green.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "app/themes/purple-cyan-theme";
+@import "app/components/task-table/task-table.component.theme";
+@import "app/components/home/home.component.theme";
+
+@include angular-material-theme($purple-cyan-theme);
+@include app-task-table-theme($purple-cyan-theme);
+@include app-home-theme($purple-cyan-theme);

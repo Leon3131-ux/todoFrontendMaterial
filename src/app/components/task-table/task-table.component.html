@@ -20,11 +20,11 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let task; columns: displayedColumns;" (click)="selectTask(task)"></tr>
+  <tr mat-row *matRowDef="let task; columns: displayedColumns;" (click)="selectTask(task)" [ngClass]="{'expired': !task.done && task.date < today, 'success': task.done}"></tr>
 </table>
 
 <div *ngIf="innerWidth <= 576">
-  <mat-card *ngFor="let task of tasks | async">
+  <mat-card *ngFor="let task of tasks | async" [ngClass]="{'expired': !task.done && task.date < today, 'success': task.done}">
     <mat-card-header>
       <mat-card-title>{{task.title}}</mat-card-title>
     </mat-card-header>

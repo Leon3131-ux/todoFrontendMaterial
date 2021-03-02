@@ -1,20 +1,19 @@
 @import '~@angular/material/theming';
 
-.sticky-bottom-wrapper{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 0;
-  width: 100%;
+.sticky-footer{
+  flex-shrink: 0;
+  padding: 10px 10px 10px;
 }
 .flex-between{
   display: flex;
   justify-content: space-between;
 }
-.container{
-  padding: 20px;
+.content{
+  flex: 1 0 auto;
+  padding: 20px 20px 0 20px;
 }
-.bottom-bar{
-  background-color: mat-color($mat-dark-theme-foreground, dividers);
-  padding: 10px;
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
