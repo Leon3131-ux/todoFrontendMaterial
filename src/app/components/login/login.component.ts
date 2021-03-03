@@ -24,7 +24,8 @@ export class LoginComponent {
     this.loginService.login(this.loginForm.getRawValue()).subscribe(data => {
       this.authService.setToken(data.headers.get('Authorization'));
       this.router.navigate(['/home']);
-    })
+    },
+      () => {})
   }
 
   navigateToSignUp(){

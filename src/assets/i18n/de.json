@@ -89,7 +89,8 @@
     "new": "Neu",
     "details": "Info",
     "logout": "Logout",
-    "login": "Login"
+    "login": "Login",
+    "dismiss": "Schliessen"
   },
   "modal": {
     "title": {

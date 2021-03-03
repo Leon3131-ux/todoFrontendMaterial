@@ -3,12 +3,12 @@ import {HttpResponseErrorHandler} from './http-response-error-handler';
 import {Injectable} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {environment} from '../../environments/environment';
-import {ToastrService} from 'ngx-toastr';
+import {SnackBarService} from '../services/snack-bar.service';
 
 @Injectable()
 export class InternalServerErrorHandler implements HttpResponseErrorHandler{
 
-  constructor(private toastr: ToastrService, private translateService: TranslateService) {
+  constructor(private snackBarService: SnackBarService, private translateService: TranslateService) {
   }
 
   matches(error: HttpErrorResponse): boolean {
@@ -24,25 +24,25 @@ export class InternalServerErrorHandler implements HttpResponseErrorHandler{
   }
 
   handleGeneric(){
-    this.toastr.error(
-      this.translateService.instant('errors.general.internalError'),
+    this.snackBarService.error(
       'Error 500',
-      {timeOut: 5000}
+      this.translateService.instant('errors.general.internalError'),
+      5000
     );
   }
 
   handleNonGeneric(error: HttpErrorResponse){
     if(error.error){
-      this.toastr.error(
-        error.error.message,
+      this.snackBarService.error(
         'Error 500',
-        {timeOut: 5000}
+        error.error.message,
+        5000
       );
     }else{
-      this.toastr.error(
-        error.message,
+      this.snackBarService.error(
         'Error 500',
-        {timeOut: 5000}
+        error.message,
+        5000
       );
     }
   }

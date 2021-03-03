@@ -22,6 +22,8 @@ import { HomeComponent } from './components/home/home.component';
 import {HomeModule} from './components/home/home.module';
 import {TaskSaveModule} from './components/task-save/task-save.module';
 import {httpInterceptProviders} from './httpInterceptors/HttpInteceptProviders';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {ErrorSnackBarModule} from './components/error-snack-bar/error-snack-bar.module';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -45,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     LoginModule,
     HomeModule,
+    ErrorSnackBarModule,
     TaskTableModule,
     TaskSaveModule,
     TranslateModule.forRoot({
@@ -64,7 +67,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginErrorHandler,
     NotFoundErrorHandler,
     DoNothingErrorHandler,
-    httpInterceptProviders
+    httpInterceptProviders,
+    MatSnackBar
   ],
   bootstrap: [AppComponent]
 })

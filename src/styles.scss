@@ -5,7 +5,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "app/themes/purple-cyan-theme";
 @import "app/components/task-table/task-table.component.theme";
 @import "app/components/home/home.component.theme";
+@import "src/app/components/error-snack-bar/error-snack-bar.theme";
 
 @include angular-material-theme($purple-cyan-theme);
 @include app-task-table-theme($purple-cyan-theme);
 @include app-home-theme($purple-cyan-theme);
+@include error-snackbar-theme($purple-cyan-theme);

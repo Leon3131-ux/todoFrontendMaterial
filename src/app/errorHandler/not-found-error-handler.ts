@@ -3,11 +3,11 @@ import {Injectable} from '@angular/core';
 import {HttpResponseErrorHandler} from './http-response-error-handler';
 import {TranslateService} from '@ngx-translate/core';
 import {environment} from '../../environments/environment';
-import {ToastrService} from 'ngx-toastr';
+import {SnackBarService} from '../services/snack-bar.service';
 
 @Injectable()
 export class NotFoundErrorHandler implements HttpResponseErrorHandler{
-  constructor(private toastr: ToastrService, private translateService: TranslateService) {
+  constructor(private snackBarService: SnackBarService, private translateService: TranslateService) {
   }
 
   matches(error: HttpErrorResponse): boolean {
@@ -23,25 +23,25 @@ export class NotFoundErrorHandler implements HttpResponseErrorHandler{
   }
 
   handleGeneric(){
-    this.toastr.error(
-      this.translateService.instant('errors.general.notFound'),
+    this.snackBarService.error(
       'Error 404',
-      {timeOut: 5000}
+      this.translateService.instant('errors.general.notFound'),
+      5000
     );
   }
 
   handleNonGeneric(error: HttpErrorResponse){
     if(error.error){
-      this.toastr.error(
-        error.error.message,
+      this.snackBarService.error(
         'Error 404',
-        {timeOut: 5000}
+        error.error.message,
+        5000
       );
     }else{
-      this.toastr.error(
-        error.error.message,
+      this.snackBarService.error(
         'Error 404',
-        {timeOut: 5000}
+        error.error.message,
+        5000
       );
     }
   }

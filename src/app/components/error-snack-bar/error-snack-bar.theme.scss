@@ -1,0 +1,12 @@
+@import "node_modules/@angular/material/theming";
+
+@mixin error-snackbar-theme($theme){
+
+  $warn: map-get($theme, warn);
+
+  snack-bar-container.error{
+    background-color: mat-color($warn);
+    color: mat-color($warn, default-contrast);
+  }
+
+}
